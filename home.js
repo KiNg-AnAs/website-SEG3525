@@ -44,7 +44,7 @@ function validateLoginForm(event) {
         return;
       }
   
-    window.location.href = "home.html";
+    window.location.href = "index.html";
   }
 
   function validateRegistrationForm(event) {
@@ -70,7 +70,7 @@ function validateLoginForm(event) {
         alert("Please agree to the terms and conditions.");
         return;}
   
-    window.location.href = "home.html";
+    window.location.href = "index.html";
   }
 
   function isValidEmail(email) {
