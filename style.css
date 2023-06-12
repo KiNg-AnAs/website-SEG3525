@@ -10,15 +10,6 @@
    scroll-behavior: smooth;
 }
 
-.error-message {
-    color: #d8000c;
-    background-color: #ffdddd;
-    border: 1px solid #d8000c;
-    padding: 10px;
-    border-radius: 4px;
-    margin-top: 5px;
-  }
-
 body {
     justify-content: center;
     align-items: center;
@@ -121,7 +112,10 @@ body {
 
 /*---------------------------------------------------login and register strats---------------------------------------------*/
 .wrapper {
-    position: relative;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 500px;
     height: 520px;
     background: transparent;
@@ -132,9 +126,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transfrom 0.5s ease, height 0.2s ease;
+    transition: transform 0.5s ease, height 0.2s ease;
     overflow: hidden;
-}
+  }
 
 
 .wrapper.active{
@@ -484,28 +478,6 @@ section{
 
 
 }
-.sticky-footer {
-    background-color: black;
-    color: aquamarine;
-    padding: 20px;
-  }
-  
-  .sticky-footer ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sticky-footer ul li {
-    margin-bottom: 10px;
-  }
-  
-  .sticky-footer p {
-    margin: 0;
-    text-align: center;
-    color: aquamarine;
-  }
-  
-
 
 
 
