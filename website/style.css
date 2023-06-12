@@ -1,0 +1,659 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", sans-serif;
+   text-decoration: none;
+   border: none;
+   outline: none;
+   scroll-behavior: smooth;
+}
+
+.error-message {
+    color: #d8000c;
+    background-color: #ffdddd;
+    border: 1px solid #d8000c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(34, 33, 33, 0.75),rgba(34,33,33,0.75)),url(bootstrap/assets/images/anas.avif);
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+}
+/*------------------------------------------------navbar------------------------------------------------*/
+.header {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition:0.3s;
+    background: black;
+}
+
+.header .sticky {
+    background: rgb(23, 21, 19);
+}
+
+.logo {
+    font-size: 3em;
+    color: #fff;
+    user-select: none;
+    text-decoration: none;
+}
+
+.white {
+    color: #fff;
+}
+
+.green{
+    color: aquamarine;
+}
+
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a:hover {
+    color: aquamarine;
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: aquamarine;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+    
+}
+
+.navigation .loginBtn-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left:40px;
+    transition: 0.5s;
+}
+
+.navigation .loginBtn-popup:hover{
+    background: aquamarine;
+    color: #fff;
+    border-color: aquamarine;
+}
+
+/*---------------------------------------------------navbar end---------------------------------------------*/
+
+/*---------------------------------------------------login and register strats---------------------------------------------*/
+.wrapper {
+    position: relative;
+    width: 500px;
+    height: 520px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 0 30px rgba(0,0,0,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transfrom 0.5s ease, height 0.2s ease;
+    overflow: hidden;
+}
+
+
+.wrapper.active{
+    height: 550px;
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top:0;
+    right:0;
+    width: 45px;
+    height: 45px;
+    background: black;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.wrapper .icon-close:hover {
+    background-color: aquamarine;
+    color: black;
+}
+
+.wrapper .loginBox {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .loginBox.login{
+    transition: transform 0.2s ease;
+    transform: translateX(0);
+
+}
+
+.wrapper.active .loginBox.login{
+    transition:none;
+    transform: translateX(-500px);
+}
+
+.wrapper .loginBox.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(500px)
+}
+
+.wrapper.active .loginBox.register{
+    transition: transform 0.2s ease;
+    transform: translateX(0);
+
+}
+
+
+.loginBox h2 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.inputBox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%) ;
+    transition: transform 0.5s;
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.inputBox input:focus~label,
+.inputBox input:valid~label {
+    top: -5px;
+}
+
+.inputBox input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.inputBox .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: black;
+    line-height: 57px;
+
+}
+
+.forgot-remember {
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgot-remember label input {
+    accent-color: aquamarine;
+    margin-right: 3px;
+}
+
+.forgot-remember a {
+    text-decoration: none;
+    color: black;
+}
+
+.forgot-remember a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: aquamarine;
+    color:black;
+}
+
+.login-register {
+    font-size: 1em;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+/*---------------------------------------------------login end---------------------------------------------*/
+
+/*---------------------------------------------------home strats---------------------------------------------*/
+section{
+    min-height: 100vh;
+    padding: 10rem 10% 2rem;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    padding:0 9%;
+   
+}
+
+
+.home-content .inactive {
+    transform: scale(0);
+}
+
+.home-content{
+    max-width: 90rem;
+    transition: transfrom 0.5s ease, height 0.2s ease;
+    transform:scale(1);
+}
+
+.home-content h1 {
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 1.5;
+}
+
+.home-content .text-anim{
+    position: relative;
+    width:80rem;
+}
+
+.home-content .text-anim h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color:transparent;
+    -webkit-text-stroke: 0.5px aquamarine;
+}
+
+
+.home-content p {
+    font-size: 1.5rem;
+    margin: 2rem 0 4rem;
+    color: #fff;
+}
+
+.btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 35rem;
+    height: 5rem;
+}
+
+
+.btn-box .btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background: aquamarine;
+    border: 0.2rem solid aquamarine;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    text-decoration: none;
+    z-index:1;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.btn-box .btn:nth-child(2){
+    background: transparent;
+    color: aquamarine;
+}
+.btn-box .btn:nth-child(2):hover{
+    color: #fff;
+}
+.btn-box .btn:nth-child(1):hover{
+    color: aquamarine;
+    background: transparent;
+}
+.btn-box .btn:nth-child(2)::before{
+    background:aquamarine;
+}
+
+.btn-box .btn::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:0;
+    height: 100%;
+    z-index: -1;
+    transition:0.5s;
+    background: transparent;
+
+}
+
+.btn-box .btn:hover::before {
+    width: 100%;
+}
+/*---------------------------------------------------home end---------------------------------------------*/
+
+/*---------------------------------------------------about strats---------------------------------------------*/
+.about{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 2rem;
+
+}
+
+
+
+.heading {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.about-img{
+    position: relative;
+    height:20rem ;
+    width:20rem ;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img {
+   width: 90%;
+   border-radius: 50%;
+   border: 0.2rem solid aquamarine;
+}
+
+.about-img .circle {
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: 0.2rem solid transparent;
+    border-bottom: 0.2rem solid transparent;
+    border-left: 0.2rem solid aquamarine;
+    border-right: 0.2rem solid aquamarine;
+    animation: aboutSpin 8s linear infinite;
+}
+
+@keyframes aboutSpin {
+100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+}
+}
+
+.about-text {
+    text-align: center;
+}
+
+.about-text p {
+    font-size: 1.5rem;
+    margin: 2rem 0 3rem;
+    color: #fff;
+    text-align: center;
+    padding-left: 10rem;
+    padding-left: 10rem;
+
+
+}
+.sticky-footer {
+    background-color: black;
+    color: aquamarine;
+    padding: 20px;
+  }
+  
+  .sticky-footer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sticky-footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sticky-footer p {
+    margin: 0;
+    text-align: center;
+    color: aquamarine;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------media---------------------------------------------*/
+
+@media (max-width:1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 990px) {
+    .header {
+        padding: 2rem 4%;
+    }
+}
+@media (max-width: 770px) {
+    .header {
+        background: rgb(23, 21, 19);
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 4%;
+        background: rgb(23, 21, 19);
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+    }
+
+    .navigation a {
+        display: block;
+        font-size: 2rem;
+        margin:3rem 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
