@@ -11,7 +11,6 @@ function submitBooking() {
     console.log("Day: " + selectedDay);
     console.log("Time: " + selectedTime);
     
-    // Add your own logic here to handle the booking submission
 }
 
 // Define the coach availabilities
@@ -37,8 +36,6 @@ var coachAvailabilities = {
   
     // Check if the selected day is available for the coach
     if (availabilities.includes(daySelect)) {
-      // Process the booking logic
-      // ...
   
       // Display a success message
       alert('Booking successful!');
